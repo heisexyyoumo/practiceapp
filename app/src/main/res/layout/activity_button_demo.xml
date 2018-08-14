@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.ButtonDemoActivity"
+    android:orientation="vertical">
+
+    <com.example.heiseyoumo.practiceapp.widgets.HeaderBar
+        android:id="@+id/mHeaderBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:isBackVisible="true"
+        app:rightText="右边"
+        app:titleText="中间"/>
+
+    <com.example.heiseyoumo.practiceapp.widgets.VerifyCode
+        android:id="@+id/mVerifyCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/btn_common"/>
+
+    <com.example.heiseyoumo.practiceapp.widgets.MyView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/colorPrimary"
+        android:layout_margin="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border_corner_all"
+        android:orientation="vertical"
+        android:layout_margin="10dp">
+
+        <EditText
+            android:id="@+id/mMobileEt"
+            android:background="@null"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:drawableLeft="@drawable/icon_phone"
+            android:drawablePadding="5dp"
+            android:hint="请输入电话号码"
+            android:inputType="number"/>
+
+        <View style="@style/DividerFixedHeight"/>
+
+        <EditText
+            android:id="@+id/mVerifyEt"
+            android:background="@null"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:drawableLeft="@drawable/icon_verify_code"
+            android:drawablePadding="5dp"
+            android:hint="请输入验证码"
+            android:inputType="number"/>
+
+        <View style="@style/DividerFixedHeight"/>
+
+        <EditText
+            android:id="@+id/mPwdEt"
+            android:background="@null"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:drawableLeft="@drawable/icon_pwd"
+            android:drawablePadding="5dp"
+            android:hint="请输入密码"
+            android:inputType="number"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/mBtnTest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="text"
+        android:visibility="gone"/>
+
+
+
+</LinearLayout>

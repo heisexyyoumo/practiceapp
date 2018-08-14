@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.heiseyoumo.practiceapp">
+
+    <!-- 读取联系人，属于危险权限，android6.0以上注意运行时权限处理 -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <!-- 允许振动的权限 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- android4.4以下需要权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 连网权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 这个权限用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 这个权限用于访问GPS定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 获取运营商信息，用于支持提供运营商信息相关的接口 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <!-- 用于读取手机当前的状态 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- SD卡读取权限，用户写入离线定位数据 -->
+    <uses-permission
+        android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions" />
+    <!-- 保持CPU 运转，屏幕和键盘灯有可能是关闭的,用于文件上传和下载 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!--允许杀死进程的权限-->
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+
+    <application
+        android:name=".application.BaseApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="TdOt0Y6eNbkBpjiKBmzE3Fj9kIlY8giN" />
+
+        <activity
+            android:name=".ui.ButtonDemoActivity"
+            android:theme="@style/Theme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.SecondActivity">
+            <intent-filter>
+                <action android:name="com.example.heiseyoumo.practiceapp.SecondActivty.ACTION_START" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".ui.ThirdActivity" />
+        <activity android:name=".ui.TestListViewActivity" />
+        <activity android:name=".ui.RecycleViewActivity" />
+        <activity android:name=".ui.ImageActivity" />
+        <activity android:name=".ui.LoginActivity" />
+        <activity android:name=".ui.TestSQLiteActivity" />
+        <activity android:name=".ui.LitePalActivity" />
+        <activity android:name=".ui.ContactsActivity" />
+        <activity android:name=".ui.NotificationTextActivity" />
+        <activity android:name=".ui.NotificationActivity" />
+        <activity android:name=".ui.PhotoActivity" />
+        <activity android:name=".ui.PlayAudioActivity" />
+        <activity android:name=".ui.WebViewActivity" />
+        <activity android:name=".ui.TestRxVolleyActivity" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.example.cameraablumtest.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" />
+
+        <activity android:name=".ui.LBSTestActivity" />
+        <activity android:name=".ui.NewsActivity" />
+        <activity
+            android:name=".ui.FruitInfoActivity"
+            android:theme="@style/FruitInfoActivityTheme" />
+        <activity android:name=".ui.AnalysisCircleActivity" />
+        <activity android:name=".ui.UserLoginActivity" />
+        <activity android:name=".ui.UserRegisterActivity" />
+        <activity android:name=".ui.ToolbarActivity" />
+        <activity android:name=".ui.RxDemoActivity"/>
+    </application>
+
+</manifest>
